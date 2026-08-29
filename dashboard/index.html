@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise MicroServices Control Center</title>
+  <link rel="stylesheet" href="/dashboard/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="logo-group">
+      <div class="logo-icon">μS</div>
+      <div class="logo-title">
+        <h1>MicroServices Platform</h1>
+        <p>Zero-Dependency Distributed Architecture</p>
+      </div>
+    </div>
+
+    <div class="header-status">
+      <div class="badge badge-green" id="gw-status-badge">
+        <span class="pulse-dot"></span>
+        <span id="gw-status-text">Gateway Online (Port 8000)</span>
+      </div>
+      <div class="badge badge-blue">
+        <span>Active Services:</span>
+        <strong id="active-services-count">0/11</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button class="tab-btn active" data-tab="tab-topology">Topology & Health</button>
+    <button class="tab-btn" data-tab="tab-analytics">Telemetry & KPIs</button>
+    <button class="tab-btn" data-tab="tab-catalog">Product & Inventory</button>
+    <button class="tab-btn" data-tab="tab-saga">Saga Checkout Simulator</button>
+    <button class="tab-btn" data-tab="tab-events">Distributed Event Stream</button>
+    <button class="tab-btn" data-tab="tab-console">API Playground</button>
+  </nav>
+
+  <!-- Main Content Areas -->
+  <main>
+
+    <!-- Tab 1: Topology & Health -->
+    <section id="tab-topology" class="tab-pane active">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Gateway Uptime</span>
+            <span class="badge badge-green">Running</span>
+          </div>
+          <div class="stat-value" id="stat-uptime">0s</div>
+          <div class="stat-sub">Central Reverse Proxy Port 8000</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Event Broker</span>
+            <span class="badge badge-blue">Port 9000</span>
+          </div>
+          <div class="stat-value" id="stat-events-count">0</div>
+          <div class="stat-sub">Events processed in message log</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Service Registry</span>
+            <span class="badge badge-green">Port 9001</span>
+          </div>
+          <div class="stat-value" id="stat-registry-nodes">0</div>
+          <div class="stat-sub">Registered dynamic instances</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Circuit Breakers</span>
+            <span class="badge badge-green">All Closed</span>
+          </div>
+          <div class="stat-value" id="stat-cb-status">Healthy</div>
+          <div class="stat-sub">0 tripped breakers</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size: 1.15rem; font-weight:700;">Service Mesh Health & Discovery</h2>
+            <p style="color:var(--text-secondary); font-size:0.85rem;">Live health heartbeat status probed from Service Registry & Gateway</p>
+          </div>
+          <button class="btn-sm" onclick="App.refreshTopology()">Refresh Status</button>
+        </div>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Tab 2: Telemetry & Analytics -->
+    <section id="tab-analytics" class="tab-pane">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Total Platform Revenue</span>
+            <span class="badge badge-green">Live</span>
+          </div>
+          <div class="stat-value" id="stat-revenue">$0.00</div>
+          <div class="stat-sub">Aggregated across all orders</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Total Orders</span>
+            <span class="badge badge-blue">Sagas</span>
+          </div>
+          <div class="stat-value" id="stat-orders">0</div>
+          <div class="stat-sub">Executed distributed checkout flows</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Saga Success Rate</span>
+            <span class="badge badge-green">Resilient</span>
+          </div>
+          <div class="stat-value" id="stat-saga-rate">100%</div>
+          <div class="stat-sub">Completed vs Compensated sagas</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Registered Users</span>
+            <span class="badge badge-blue">Auth Core</span>
+          </div>
+          <div class="stat-value" id="stat-users">0</div>
+          <div class="stat-sub">Active identity accounts</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+        <div class="card">
+          <h3 style="font-size: 1rem; margin-bottom: 1rem;">Top Selling Products</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Quantity Sold</th>
+                </tr>
+              </thead>
+              <tbody id="top-products-body">
+                <tr><td colspan="2" style="color:var(--text-muted);">No sales data yet</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 1rem; margin-bottom: 1rem;">Event Topics Distribution</h3>
+          <div id="topics-distribution" style="display:flex; flex-direction:column; gap:0.5rem;">
+            <p style="color:var(--text-muted); font-size:0.85rem;">Listening for event bus telemetry...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: Product Catalog & Inventory -->
+    <section id="tab-catalog" class="tab-pane">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <div>
+          <h2 style="font-size:1.15rem; font-weight:700;">Catalog & Warehouse Stock</h2>
+          <p style="color:var(--text-secondary); font-size:0.85rem;">Manage SKUs, stock allocations, and pricing</p>
+        </div>
+        <button class="btn-sm" onclick="App.loadCatalog()">Refresh Catalog</button>
+      </div>
+
+      <div class="table-container card">
+        <table>
+          <thead>
+            <tr>
+              <th>SKU</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Available Stock</th>
+              <th>Reserved</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="catalog-table-body">
+            <tr><td colspan="7" style="text-align:center;">Loading catalog items...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tab 4: Distributed Saga Checkout Simulator -->
+    <section id="tab-saga" class="tab-pane">
+      <div class="saga-container">
+        <!-- Simulator Trigger Form -->
+        <div class="card">
+          <h2 style="font-size:1.15rem; font-weight:700; margin-bottom:0.5rem;">Interactive Saga Simulator</h2>
+          <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:1.5rem;">
+            Trigger an end-to-end distributed transaction across <strong>Order Service</strong>, <strong>Inventory Service</strong>, and <strong>Payment Service</strong> with automated compensation on failure.
+          </p>
+
+          <div class="form-group">
+            <label>Select Product to Purchase</label>
+            <select class="form-control" id="saga-product-select">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" id="saga-quantity" class="form-control" value="1" min="1" max="10">
+          </div>
+
+          <div class="form-group">
+            <label>Payment Simulation Scenario</label>
+            <select class="form-control" id="saga-card-scenario">
+              <option value="4242424242424242">Successful Payment (Visa ****4242)</option>
+              <option value="4000000000000002">Simulate Declined Payment (Trigger Compensation)</option>
+            </select>
+            <small style="color:var(--text-muted); font-size:0.75rem; display:block; margin-top:0.25rem;">
+              Declined card triggers automatic rollback (releases reserved stock and marks saga compensated).
+            </small>
+          </div>
+
+          <button class="btn-primary" id="btn-run-saga" onclick="App.executeSagaCheckout()">
+            Launch Distributed Saga Checkout
+          </button>
+        </div>
+
+        <!-- Visual Timeline -->
+        <div class="card">
+          <h2 style="font-size:1.15rem; font-weight:700; margin-bottom:0.5rem;">Saga Execution State Machine</h2>
+          <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:1rem;">Real-time step progression and compensation lifecycle</p>
+
+          <div class="saga-timeline">
+            <div class="saga-step pending" id="step-inv-reserve">
+              <div class="step-num">1</div>
+              <div>
+                <strong>Reserve Inventory</strong>
+                <p style="font-size:0.75rem; color:var(--text-secondary);" id="step-inv-reserve-sub">Pending execution</p>
+              </div>
+            </div>
+
+            <div class="saga-step pending" id="step-pay-charge">
+              <div class="step-num">2</div>
+              <div>
+                <strong>Process Payment Charge</strong>
+                <p style="font-size:0.75rem; color:var(--text-secondary);" id="step-pay-charge-sub">Pending execution</p>
+              </div>
+            </div>
+
+            <div class="saga-step pending" id="step-inv-commit">
+              <div class="step-num">3</div>
+              <div>
+                <strong>Commit / Compensate Release</strong>
+                <p style="font-size:0.75rem; color:var(--text-secondary);" id="step-inv-commit-sub">Pending execution</p>
+              </div>
+            </div>
+
+            <div class="saga-step pending" id="step-notif-dispatch">
+              <div class="step-num">4</div>
+              <div>
+                <strong>Dispatch Notifications & Telemetry</strong>
+                <p style="font-size:0.75rem; color:var(--text-secondary);" id="step-notif-dispatch-sub">Pending execution</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="saga-result-box" style="margin-top:1.5rem; display:none;">
+            <pre id="saga-result-json"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: Distributed Event Stream -->
+    <section id="tab-events" class="tab-pane">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <div>
+          <h2 style="font-size:1.15rem; font-weight:700;">Distributed Message Broker Event Log</h2>
+          <p style="color:var(--text-secondary); font-size:0.85rem;">Live domain events with correlation trace IDs across microservices</p>
+        </div>
+        <button class="btn-sm" onclick="App.loadEvents()">Refresh Stream</button>
+      </div>
+
+      <div class="table-container card">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Topic</th>
+              <th>Sender</th>
+              <th>Trace ID</th>
+              <th>Payload Summary</th>
+            </tr>
+          </thead>
+          <tbody id="events-table-body">
+            <tr><td colspan="5" style="text-align:center;">Listening for events on Event Bus...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tab 6: API Console -->
+    <section id="tab-console" class="tab-pane">
+      <div class="card">
+        <h2 style="font-size:1.15rem; font-weight:700; margin-bottom:1rem;">Interactive Gateway API Playground</h2>
+
+        <div style="display:flex; gap:0.75rem; margin-bottom:1rem;">
+          <select id="api-method" class="form-control" style="width:120px;">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+          <input type="text" id="api-path" class="form-control" value="/api/products" placeholder="/api/endpoint">
+          <button class="btn-primary" style="width:140px;" onclick="App.executeApiCall()">Send</button>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <label style="font-size:0.8rem; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:0.25rem;">Quick Endpoints:</label>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <button class="btn-sm" onclick="App.setEndpoint('GET', '/api/products', '')">Get Products</button>
+            <button class="btn-sm" onclick="App.setEndpoint('GET', '/api/orders', '')">Get Orders</button>
+            <button class="btn-sm" onclick="App.setEndpoint('GET', '/api/inventory', '')">Get Inventory</button>
+            <button class="btn-sm" onclick="App.setEndpoint('GET', '/api/analytics/metrics/overview', '')">Get Metrics</button>
+            <button class="btn-sm" onclick="App.setEndpoint('GET', '/api/notifications', '')">Get Notifications</button>
+            <button class="btn-sm" onclick="App.setEndpoint('GET', '/api/system/topology', '')">Get System Topology</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>JSON Body (for POST/PUT)</label>
+          <textarea id="api-body" class="form-control" rows="4" style="font-family:monospace; font-size:0.85rem;" placeholder="{}"></textarea>
+        </div>
+
+        <div>
+          <label style="font-size:0.8rem; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:0.25rem;">Response Output:</label>
+          <pre id="api-response-output">// Click 'Send' to test the microservice endpoint</pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Enterprise Microservices Platform &copy; 2026 &bull; Clean Architecture &bull; Zero-Dependency Standard Runtime
+  </footer>
+
+  <script src="/dashboard/js/app.js"></script>
+</body>
+</html>
