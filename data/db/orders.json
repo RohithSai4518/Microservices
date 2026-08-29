@@ -1,0 +1,191 @@
+[
+  {
+    "userId": "usr_integ_01",
+    "items": [
+      {
+        "productId": "pro_mte6wbj7_186239d5",
+        "sku": "SKU-TITAN-X8",
+        "name": "Titan Enterprise Server Node X8",
+        "price": 2499,
+        "quantity": 1,
+        "subtotal": 2499
+      }
+    ],
+    "totalAmount": 2499,
+    "currency": "USD",
+    "shippingAddress": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "status": "CONFIRMED",
+    "history": [
+      {
+        "status": "PENDING_SAGA",
+        "timestamp": "2026-08-29T09:42:10.525Z",
+        "note": "Checkout initiated"
+      }
+    ],
+    "id": "ord_mte6ywke_879bb93b",
+    "createdAt": "2026-08-29T09:42:10.526Z",
+    "updatedAt": "2026-08-29T09:42:10.589Z",
+    "transactionId": "pay_mte6ywli_23e353ce",
+    "confirmedAt": "2026-08-29T09:42:10.588Z"
+  },
+  {
+    "userId": "usr_integ_fail",
+    "items": [
+      {
+        "productId": "pro_mte6wbj7_186239d5",
+        "sku": "SKU-TITAN-X8",
+        "name": "Titan Enterprise Server Node X8",
+        "price": 2499,
+        "quantity": 1,
+        "subtotal": 2499
+      }
+    ],
+    "totalAmount": 2499,
+    "currency": "USD",
+    "shippingAddress": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "status": "PAYMENT_FAILED",
+    "history": [
+      {
+        "status": "PENDING_SAGA",
+        "timestamp": "2026-08-29T09:42:10.606Z",
+        "note": "Checkout initiated"
+      }
+    ],
+    "id": "ord_mte6ywmm_276c888b",
+    "createdAt": "2026-08-29T09:42:10.606Z",
+    "updatedAt": "2026-08-29T09:42:10.655Z",
+    "failureReason": "Payment gateway declined the transaction"
+  },
+  {
+    "userId": "usr_integ_01",
+    "items": [
+      {
+        "productId": "pro_mte6wbj7_186239d5",
+        "sku": "SKU-TITAN-X8",
+        "name": "Titan Enterprise Server Node X8",
+        "price": 2499,
+        "quantity": 1,
+        "subtotal": 2499
+      }
+    ],
+    "totalAmount": 2499,
+    "currency": "USD",
+    "shippingAddress": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "status": "CONFIRMED",
+    "history": [
+      {
+        "status": "PENDING_SAGA",
+        "timestamp": "2026-08-29T09:42:17.174Z",
+        "note": "Checkout initiated"
+      }
+    ],
+    "id": "ord_mte6z1p2_d67f5777",
+    "createdAt": "2026-08-29T09:42:17.174Z",
+    "updatedAt": "2026-08-29T09:42:17.210Z",
+    "transactionId": "pay_mte6z1pm_82fde132",
+    "confirmedAt": "2026-08-29T09:42:17.210Z"
+  },
+  {
+    "userId": "usr_integ_fail",
+    "items": [
+      {
+        "productId": "pro_mte6wbj7_186239d5",
+        "sku": "SKU-TITAN-X8",
+        "name": "Titan Enterprise Server Node X8",
+        "price": 2499,
+        "quantity": 1,
+        "subtotal": 2499
+      }
+    ],
+    "totalAmount": 2499,
+    "currency": "USD",
+    "shippingAddress": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "status": "PAYMENT_FAILED",
+    "history": [
+      {
+        "status": "PENDING_SAGA",
+        "timestamp": "2026-08-29T09:42:17.225Z",
+        "note": "Checkout initiated"
+      }
+    ],
+    "id": "ord_mte6z1qh_9403b58c",
+    "createdAt": "2026-08-29T09:42:17.225Z",
+    "updatedAt": "2026-08-29T09:42:17.268Z",
+    "failureReason": "Payment gateway declined the transaction"
+  },
+  {
+    "userId": "usr_integ_01",
+    "items": [
+      {
+        "productId": "pro_mte6wbj7_186239d5",
+        "sku": "SKU-TITAN-X8",
+        "name": "Titan Enterprise Server Node X8",
+        "price": 2499,
+        "quantity": 1,
+        "subtotal": 2499
+      }
+    ],
+    "totalAmount": 2499,
+    "currency": "USD",
+    "shippingAddress": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "status": "CONFIRMED",
+    "history": [
+      {
+        "status": "PENDING_SAGA",
+        "timestamp": "2026-08-29T10:04:34.682Z",
+        "note": "Checkout initiated"
+      }
+    ],
+    "id": "ord_mte7rpq2_27322faf",
+    "createdAt": "2026-08-29T10:04:34.682Z",
+    "updatedAt": "2026-08-29T10:04:34.720Z",
+    "transactionId": "pay_mte7rpqo_2fc810b8",
+    "confirmedAt": "2026-08-29T10:04:34.720Z"
+  },
+  {
+    "userId": "usr_integ_fail",
+    "items": [
+      {
+        "productId": "pro_mte6wbj7_186239d5",
+        "sku": "SKU-TITAN-X8",
+        "name": "Titan Enterprise Server Node X8",
+        "price": 2499,
+        "quantity": 1,
+        "subtotal": 2499
+      }
+    ],
+    "totalAmount": 2499,
+    "currency": "USD",
+    "shippingAddress": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "status": "PAYMENT_FAILED",
+    "history": [
+      {
+        "status": "PENDING_SAGA",
+        "timestamp": "2026-08-29T10:04:34.735Z",
+        "note": "Checkout initiated"
+      }
+    ],
+    "id": "ord_mte7rprj_10997b9a",
+    "createdAt": "2026-08-29T10:04:34.735Z",
+    "updatedAt": "2026-08-29T10:04:34.768Z",
+    "failureReason": "Payment gateway declined the transaction"
+  }
+]

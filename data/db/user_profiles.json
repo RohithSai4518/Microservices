@@ -1,0 +1,70 @@
+[
+  {
+    "userId": "aut_mte6wbit_9e53b834",
+    "email": "customer@microservices.local",
+    "name": "Alex Johnson",
+    "phone": "+1 (555) 019-2834",
+    "company": "Enterprise Solutions LLC",
+    "bio": "Lead Cloud Architect & Developer",
+    "preferences": {
+      "currency": "USD",
+      "theme": "dark",
+      "emailNotifications": true,
+      "smsAlerts": false
+    },
+    "id": "use_mte6wbiw_26222948",
+    "createdAt": "2026-08-29T09:40:09.944Z",
+    "updatedAt": "2026-08-29T09:40:09.944Z"
+  },
+  {
+    "userId": "aut_mte6ywho_0f2d194d",
+    "email": "testuser_1787996530388@testdomain.com",
+    "name": "Integration Test User",
+    "phone": "",
+    "company": "",
+    "bio": "Microservices Platform Customer",
+    "preferences": {
+      "currency": "USD",
+      "theme": "dark",
+      "emailNotifications": true,
+      "smsAlerts": false
+    },
+    "id": "use_mte6ywir_8db944e7",
+    "createdAt": "2026-08-29T09:42:10.467Z",
+    "updatedAt": "2026-08-29T09:42:10.467Z"
+  },
+  {
+    "userId": "aut_mte6z1n1_bb85b3a4",
+    "email": "testuser_1787996537066@testdomain.com",
+    "name": "Integration Test User",
+    "phone": "",
+    "company": "",
+    "bio": "Microservices Platform Customer",
+    "preferences": {
+      "currency": "USD",
+      "theme": "dark",
+      "emailNotifications": true,
+      "smsAlerts": false
+    },
+    "id": "use_mte6z1nb_a68db263",
+    "createdAt": "2026-08-29T09:42:17.111Z",
+    "updatedAt": "2026-08-29T09:42:17.111Z"
+  },
+  {
+    "userId": "aut_mte7rpok_ca610934",
+    "email": "testuser_1787997874588@testdomain.com",
+    "name": "Integration Test User",
+    "phone": "",
+    "company": "",
+    "bio": "Microservices Platform Customer",
+    "preferences": {
+      "currency": "USD",
+      "theme": "dark",
+      "emailNotifications": true,
+      "smsAlerts": false
+    },
+    "id": "use_mte7rpos_a8a36d32",
+    "createdAt": "2026-08-29T10:04:34.637Z",
+    "updatedAt": "2026-08-29T10:04:34.637Z"
+  }
+]

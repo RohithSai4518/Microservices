@@ -1,0 +1,74 @@
+[
+  {
+    "userId": "aut_mte6ywho_0f2d194d",
+    "recipient": "testuser_1787996530388@testdomain.com",
+    "channel": "EMAIL",
+    "subject": "Welcome to MicroServices Platform, Integration Test User!",
+    "message": "Your registration was successful. You can now browse our catalog and place orders.",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T09:42:10.466Z",
+    "id": "not_mte6ywiq_1dcdcc46",
+    "createdAt": "2026-08-29T09:42:10.467Z",
+    "updatedAt": "2026-08-29T09:42:10.467Z"
+  },
+  {
+    "userId": "usr_integ_01",
+    "recipient": "usr_integ_01",
+    "channel": "EMAIL",
+    "subject": "Order #ord_mte6ywke_879bb93b Confirmed ($2499)",
+    "message": "Your payment was processed and stock allocated. Thank you for your order!",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T09:42:10.596Z",
+    "id": "not_mte6ywmc_48d02e8e",
+    "createdAt": "2026-08-29T09:42:10.596Z",
+    "updatedAt": "2026-08-29T09:42:10.596Z"
+  },
+  {
+    "userId": "aut_mte6z1n1_bb85b3a4",
+    "recipient": "testuser_1787996537066@testdomain.com",
+    "channel": "EMAIL",
+    "subject": "Welcome to MicroServices Platform, Integration Test User!",
+    "message": "Your registration was successful. You can now browse our catalog and place orders.",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T09:42:17.114Z",
+    "id": "not_mte6z1ne_8e676066",
+    "createdAt": "2026-08-29T09:42:17.114Z",
+    "updatedAt": "2026-08-29T09:42:17.114Z"
+  },
+  {
+    "userId": "usr_integ_01",
+    "recipient": "usr_integ_01",
+    "channel": "EMAIL",
+    "subject": "Order #ord_mte6z1p2_d67f5777 Confirmed ($2499)",
+    "message": "Your payment was processed and stock allocated. Thank you for your order!",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T09:42:17.216Z",
+    "id": "not_mte6z1q8_ca7d9d84",
+    "createdAt": "2026-08-29T09:42:17.216Z",
+    "updatedAt": "2026-08-29T09:42:17.216Z"
+  },
+  {
+    "userId": "aut_mte7rpok_ca610934",
+    "recipient": "testuser_1787997874588@testdomain.com",
+    "channel": "EMAIL",
+    "subject": "Welcome to MicroServices Platform, Integration Test User!",
+    "message": "Your registration was successful. You can now browse our catalog and place orders.",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T10:04:34.637Z",
+    "id": "not_mte7rpot_3f1b1026",
+    "createdAt": "2026-08-29T10:04:34.637Z",
+    "updatedAt": "2026-08-29T10:04:34.637Z"
+  },
+  {
+    "userId": "usr_integ_01",
+    "recipient": "usr_integ_01",
+    "channel": "EMAIL",
+    "subject": "Order #ord_mte7rpq2_27322faf Confirmed ($2499)",
+    "message": "Your payment was processed and stock allocated. Thank you for your order!",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T10:04:34.726Z",
+    "id": "not_mte7rpra_6a684268",
+    "createdAt": "2026-08-29T10:04:34.726Z",
+    "updatedAt": "2026-08-29T10:04:34.726Z"
+  }
+]
