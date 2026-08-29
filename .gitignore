@@ -1,0 +1,8 @@
+# Node & Application artifacts
+node_modules/
+dist/
+coverage/
+*.tmp*
+logs/*.log
+!logs/.gitkeep
+MicroServices-Platform.zip

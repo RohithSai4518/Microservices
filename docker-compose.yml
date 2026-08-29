@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  microservices-platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: enterprise_microservices_cluster
+    ports:
+      - "8000:8000" # API Gateway & Dashboard
+      - "9000:9000" # Event Bus Broker
+      - "9001:9001" # Service Registry
+      - "8001:8001" # Auth Service
+      - "8002:8002" # User Service
+      - "8003:8003" # Product Service
+      - "8004:8004" # Order Service
+      - "8005:8005" # Payment Service
+      - "8006:8006" # Inventory Service
+      - "8007:8007" # Notification Service
+      - "8008:8008" # Analytics Service
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=INFO
+      - GATEWAY_PORT=8000
+      - REGISTRY_PORT=9001
+      - EVENT_BUS_PORT=9000
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped

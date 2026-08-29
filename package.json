@@ -1,0 +1,29 @@
+{
+  "name": "enterprise-microservices-platform",
+  "version": "1.0.0",
+  "description": "Enterprise-grade, zero-dependency distributed microservices platform with Saga orchestration, service mesh discovery, event brokerage, and responsive management console.",
+  "main": "scripts/start-all.js",
+  "scripts": {
+    "start": "node scripts/start-all.js",
+    "build": "node scripts/build-full-codebase.js && node scripts/build-enterprise-schemas.js && node scripts/build-domain-calculators.js",
+    "seed": "node scripts/seed-data.js",
+    "health": "node scripts/health-check.js",
+    "test": "node tests/integration/run-all-tests.js",
+    "test:coverage": "node tests/run-coverage.js",
+    "count:loc": "node scripts/count-loc.js",
+    "lint": "node scripts/lint-check.js"
+  },
+  "keywords": [
+    "microservices",
+    "distributed-systems",
+    "saga-pattern",
+    "event-driven",
+    "api-gateway",
+    "service-registry",
+    "event-bus",
+    "zero-dependency",
+    "enterprise-architecture"
+  ],
+  "author": "Human Engineering Team",
+  "license": "UNLICENSED"
+}
