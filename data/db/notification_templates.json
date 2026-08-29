@@ -1,0 +1,29 @@
+[
+  {
+    "id": "tpl_welcome",
+    "name": "Welcome Email",
+    "channel": "EMAIL",
+    "subject": "Welcome to Enterprise Microservices Platform, {{name}}!",
+    "body": "Hello {{name}},\n\nThank you for joining our platform. Your account ({{email}}) is now active.",
+    "createdAt": "2026-08-29T09:40:11.109Z",
+    "updatedAt": "2026-08-29T09:40:11.109Z"
+  },
+  {
+    "id": "tpl_order_confirmed",
+    "name": "Order Confirmation",
+    "channel": "EMAIL",
+    "subject": "Order Confirmed: #{{orderId}}",
+    "body": "Hi {{name}},\n\nYour order #{{orderId}} of ${{totalAmount}} has been confirmed and is being processed.",
+    "createdAt": "2026-08-29T09:40:11.117Z",
+    "updatedAt": "2026-08-29T09:40:11.117Z"
+  },
+  {
+    "id": "tpl_order_cancelled",
+    "name": "Order Cancellation & Refund",
+    "channel": "EMAIL",
+    "subject": "Order Cancelled: #{{orderId}}",
+    "body": "Your order #{{orderId}} has been cancelled. A refund of ${{refundAmount}} was processed.",
+    "createdAt": "2026-08-29T09:40:11.118Z",
+    "updatedAt": "2026-08-29T09:40:11.118Z"
+  }
+]

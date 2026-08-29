@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Titan Enterprise Server Node X8",
+    "sku": "SKU-TITAN-X8",
+    "price": 2499,
+    "category": "Cloud Hardware",
+    "description": "64-Core High Density Compute Blade with 256GB ECC RAM",
+    "stock": 35,
+    "tags": [
+      "server",
+      "compute",
+      "datacenter"
+    ],
+    "id": "pro_mte6wbj7_186239d5",
+    "createdAt": "2026-08-29T09:40:09.955Z",
+    "updatedAt": "2026-08-29T09:40:09.955Z"
+  },
+  {
+    "name": "UltraWide 49\" Curved Dev Monitor",
+    "sku": "SKU-MON-49UW",
+    "price": 1099.99,
+    "category": "Developer Tools",
+    "description": "144Hz 5K Dual-QHD IPS display for high productivity programming",
+    "stock": 45,
+    "tags": [
+      "display",
+      "hardware",
+      "productivity"
+    ],
+    "id": "pro_mte6wbjb_9fc884f8",
+    "createdAt": "2026-08-29T09:40:09.959Z",
+    "updatedAt": "2026-08-29T09:40:09.959Z"
+  },
+  {
+    "name": "HHKB Pro Hybrid Silent Keyboard",
+    "sku": "SKU-KEY-HHKB",
+    "price": 320,
+    "category": "Developer Tools",
+    "description": "Topre capacitive key switches with Bluetooth and USB-C connectivity",
+    "stock": 75,
+    "tags": [
+      "keyboard",
+      "topre",
+      "accessories"
+    ],
+    "id": "pro_mte6wbjd_81667292",
+    "createdAt": "2026-08-29T09:40:09.961Z",
+    "updatedAt": "2026-08-29T09:40:09.961Z"
+  },
+  {
+    "name": "YubiHSM 2 Hardware Security Module",
+    "sku": "SKU-SEC-HSM2",
+    "price": 650,
+    "category": "Security Keys",
+    "description": "Miniature hardware security module for cryptographic key protection",
+    "stock": 120,
+    "tags": [
+      "security",
+      "cryptography",
+      "auth"
+    ],
+    "id": "pro_mte6wbjh_5b0253f1",
+    "createdAt": "2026-08-29T09:40:09.965Z",
+    "updatedAt": "2026-08-29T09:40:09.965Z"
+  },
+  {
+    "name": "Mesh Gigabit Router Pro 6E",
+    "sku": "SKU-NET-ROUTER",
+    "price": 299.5,
+    "category": "Cloud Hardware",
+    "description": "Tri-band Wi-Fi 6E mesh router with 10Gbps SFP+ uplink port",
+    "stock": 60,
+    "tags": [
+      "networking",
+      "wifi",
+      "hardware"
+    ],
+    "id": "pro_mte6wbjj_d6029987",
+    "createdAt": "2026-08-29T09:40:09.967Z",
+    "updatedAt": "2026-08-29T09:40:09.967Z"
+  }
+]

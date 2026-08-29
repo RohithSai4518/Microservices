@@ -1,0 +1,46 @@
+[
+  {
+    "email": "admin@microservices.local",
+    "name": "System Admin",
+    "passwordHash": "565d84cc9739669f9c843334e83e4ed9:024300abdfbc3d76eb2fd2df6ad3d94dd7e1429ab664dfd098b1f14b0e0782d9b2310cf7bdc6ca3d3cb9432854f23067002a2ddcd29a8ba90d653e8ba7f8c05f",
+    "role": "admin",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-08-29T09:42:17.136Z",
+    "id": "aut_mte6wbig_9c7a4a4d",
+    "createdAt": "2026-08-29T09:40:09.928Z",
+    "updatedAt": "2026-08-29T09:42:17.136Z"
+  },
+  {
+    "email": "customer@microservices.local",
+    "name": "Alex Johnson",
+    "passwordHash": "b20010b08f359fcd0eb6ed646dbd06d8:e08f6af01803a090deef376c5ebe3ed3d1d9917cf9bbead1e445db5ad57f9df25e646d57dcba0b661641e3ab6a0a3346c42a2e820d0d4b27b783cf1873999754",
+    "role": "customer",
+    "status": "ACTIVE",
+    "lastLoginAt": null,
+    "id": "aut_mte6wbit_9e53b834",
+    "createdAt": "2026-08-29T09:40:09.941Z",
+    "updatedAt": "2026-08-29T09:40:09.941Z"
+  },
+  {
+    "email": "testuser_1787996530388@testdomain.com",
+    "name": "Integration Test User",
+    "passwordHash": "62a2a993c9dcc4b4b93267f6a605e6e2:6ed2bc63ebe4717765e626f9c9adee4ea68c730bcbe253141832b7c0208e390208f7d7079a56acaa0ec0f639617346add1137abb25bceca3331adfd1c37bf385",
+    "role": "customer",
+    "status": "ACTIVE",
+    "lastLoginAt": null,
+    "id": "aut_mte6ywho_0f2d194d",
+    "createdAt": "2026-08-29T09:42:10.428Z",
+    "updatedAt": "2026-08-29T09:42:10.428Z"
+  },
+  {
+    "email": "testuser_1787996537066@testdomain.com",
+    "name": "Integration Test User",
+    "passwordHash": "e44a47db05a2ea39f48b83e060c16589:2f4f75cc380a72e9245b45130c4893b85f55dcf4b5aa21b0c9b82d1a7b18c161a3fc5a5e65c9d65e471aba07c14d9d019e867ba1dc4b5bea79739c9d572ed244",
+    "role": "customer",
+    "status": "ACTIVE",
+    "lastLoginAt": null,
+    "id": "aut_mte6z1n1_bb85b3a4",
+    "createdAt": "2026-08-29T09:42:17.101Z",
+    "updatedAt": "2026-08-29T09:42:17.101Z"
+  }
+]

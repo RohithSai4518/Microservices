@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Cloud Hardware",
+    "slug": "cloud-hardware",
+    "description": "Enterprise servers, networking, and rack units",
+    "id": "cat_mte6wbj4_9251cadb",
+    "createdAt": "2026-08-29T09:40:09.953Z",
+    "updatedAt": "2026-08-29T09:40:09.953Z"
+  },
+  {
+    "name": "Developer Tools",
+    "slug": "developer-tools",
+    "description": "Monitors, mechanical keyboards, ergonomic accessories",
+    "id": "cat_mte6wbj5_948aed7a",
+    "createdAt": "2026-08-29T09:40:09.953Z",
+    "updatedAt": "2026-08-29T09:40:09.953Z"
+  },
+  {
+    "name": "Security Keys",
+    "slug": "security-keys",
+    "description": "Hardware 2FA tokens and encryption keys",
+    "id": "cat_mte6wbj6_f7aad4d3",
+    "createdAt": "2026-08-29T09:40:09.954Z",
+    "updatedAt": "2026-08-29T09:40:09.954Z"
+  }
+]

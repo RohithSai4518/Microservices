@@ -1,0 +1,52 @@
+[
+  {
+    "sku": "SKU-TITAN-X8",
+    "availableStock": 33,
+    "reservedStock": 0,
+    "totalStock": 33,
+    "warehouse": "MAIN-WAREHOUSE-1",
+    "id": "inv_mte6wbja_9e7e27cb",
+    "createdAt": "2026-08-29T09:40:09.958Z",
+    "updatedAt": "2026-08-29T09:42:17.256Z"
+  },
+  {
+    "sku": "SKU-MON-49UW",
+    "availableStock": 45,
+    "reservedStock": 0,
+    "totalStock": 45,
+    "warehouse": "MAIN-WAREHOUSE-1",
+    "id": "inv_mte6wbjc_a680eae3",
+    "createdAt": "2026-08-29T09:40:09.960Z",
+    "updatedAt": "2026-08-29T09:40:09.960Z"
+  },
+  {
+    "sku": "SKU-KEY-HHKB",
+    "availableStock": 75,
+    "reservedStock": 0,
+    "totalStock": 75,
+    "warehouse": "MAIN-WAREHOUSE-1",
+    "id": "inv_mte6wbje_330c241b",
+    "createdAt": "2026-08-29T09:40:09.962Z",
+    "updatedAt": "2026-08-29T09:40:09.962Z"
+  },
+  {
+    "sku": "SKU-SEC-HSM2",
+    "availableStock": 120,
+    "reservedStock": 0,
+    "totalStock": 120,
+    "warehouse": "MAIN-WAREHOUSE-1",
+    "id": "inv_mte6wbji_2174da5c",
+    "createdAt": "2026-08-29T09:40:09.966Z",
+    "updatedAt": "2026-08-29T09:40:09.966Z"
+  },
+  {
+    "sku": "SKU-NET-ROUTER",
+    "availableStock": 60,
+    "reservedStock": 0,
+    "totalStock": 60,
+    "warehouse": "MAIN-WAREHOUSE-1",
+    "id": "inv_mte6wbjk_eb66612f",
+    "createdAt": "2026-08-29T09:40:09.968Z",
+    "updatedAt": "2026-08-29T09:40:09.968Z"
+  }
+]

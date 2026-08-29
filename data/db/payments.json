@@ -1,0 +1,60 @@
+[
+  {
+    "orderId": "ord_mte6ywke_879bb93b",
+    "userId": "usr_integ_01",
+    "amount": 2499,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "paymentMethod": {
+      "type": "CREDIT_CARD",
+      "last4": "4242"
+    },
+    "idempotencyKey": "idemp_ord_mte6ywke_879bb93b",
+    "gatewayRef": "gw_auth_dace36ced757",
+    "id": "pay_mte6ywli_23e353ce",
+    "createdAt": "2026-08-29T09:42:10.566Z",
+    "updatedAt": "2026-08-29T09:42:10.566Z"
+  },
+  {
+    "orderId": "ord_mte6ywmm_276c888b",
+    "userId": "usr_integ_fail",
+    "amount": 2499,
+    "currency": "USD",
+    "status": "FAILED",
+    "failureReason": "Card declined / Insufficient funds simulation",
+    "idempotencyKey": "idemp_ord_mte6ywmm_276c888b",
+    "gatewayRef": "gw_err_1787996530622",
+    "id": "pay_mte6ywn2_2ce59f0d",
+    "createdAt": "2026-08-29T09:42:10.622Z",
+    "updatedAt": "2026-08-29T09:42:10.622Z"
+  },
+  {
+    "orderId": "ord_mte6z1p2_d67f5777",
+    "userId": "usr_integ_01",
+    "amount": 2499,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "paymentMethod": {
+      "type": "CREDIT_CARD",
+      "last4": "4242"
+    },
+    "idempotencyKey": "idemp_ord_mte6z1p2_d67f5777",
+    "gatewayRef": "gw_auth_4a2386f607fd",
+    "id": "pay_mte6z1pm_82fde132",
+    "createdAt": "2026-08-29T09:42:17.194Z",
+    "updatedAt": "2026-08-29T09:42:17.194Z"
+  },
+  {
+    "orderId": "ord_mte6z1qh_9403b58c",
+    "userId": "usr_integ_fail",
+    "amount": 2499,
+    "currency": "USD",
+    "status": "FAILED",
+    "failureReason": "Card declined / Insufficient funds simulation",
+    "idempotencyKey": "idemp_ord_mte6z1qh_9403b58c",
+    "gatewayRef": "gw_err_1787996537242",
+    "id": "pay_mte6z1qy_0e36ba59",
+    "createdAt": "2026-08-29T09:42:17.242Z",
+    "updatedAt": "2026-08-29T09:42:17.242Z"
+  }
+]
