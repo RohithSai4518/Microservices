@@ -56,5 +56,34 @@
     "id": "pay_mte6z1qy_0e36ba59",
     "createdAt": "2026-08-29T09:42:17.242Z",
     "updatedAt": "2026-08-29T09:42:17.242Z"
+  },
+  {
+    "orderId": "ord_mte7rpq2_27322faf",
+    "userId": "usr_integ_01",
+    "amount": 2499,
+    "currency": "USD",
+    "status": "SUCCESS",
+    "paymentMethod": {
+      "type": "CREDIT_CARD",
+      "last4": "4242"
+    },
+    "idempotencyKey": "idemp_ord_mte7rpq2_27322faf",
+    "gatewayRef": "gw_auth_3bb700d5b8b2",
+    "id": "pay_mte7rpqo_2fc810b8",
+    "createdAt": "2026-08-29T10:04:34.704Z",
+    "updatedAt": "2026-08-29T10:04:34.704Z"
+  },
+  {
+    "orderId": "ord_mte7rprj_10997b9a",
+    "userId": "usr_integ_fail",
+    "amount": 2499,
+    "currency": "USD",
+    "status": "FAILED",
+    "failureReason": "Card declined / Insufficient funds simulation",
+    "idempotencyKey": "idemp_ord_mte7rprj_10997b9a",
+    "gatewayRef": "gw_err_1787997874750",
+    "id": "pay_mte7rpry_cc738135",
+    "createdAt": "2026-08-29T10:04:34.750Z",
+    "updatedAt": "2026-08-29T10:04:34.750Z"
   }
 ]

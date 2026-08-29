@@ -214,5 +214,113 @@
     ],
     "createdAt": "2026-08-29T09:42:17.227Z",
     "updatedAt": "2026-08-29T09:42:17.270Z"
+  },
+  {
+    "id": "saga_ord_mte7rpq2_27322faf",
+    "orderId": "ord_mte7rpq2_27322faf",
+    "status": "COMPLETED",
+    "steps": [
+      {
+        "stepName": "INVENTORY_RESERVATION",
+        "status": "SUCCESS",
+        "timestamp": "2026-08-29T10:04:34.698Z",
+        "details": {
+          "success": true,
+          "data": {
+            "success": true,
+            "reservationId": "sto_mte7rpqa_63c9fdfc",
+            "orderId": "ord_mte7rpq2_27322faf",
+            "status": "RESERVED"
+          },
+          "timestamp": "2026-08-29T10:04:34.698Z",
+          "traceId": "tr_gw_1787997874679_au3f6"
+        }
+      },
+      {
+        "stepName": "PAYMENT_CHARGE",
+        "status": "SUCCESS",
+        "timestamp": "2026-08-29T10:04:34.714Z",
+        "details": {
+          "success": true,
+          "data": {
+            "orderId": "ord_mte7rpq2_27322faf",
+            "userId": "usr_integ_01",
+            "amount": 2499,
+            "currency": "USD",
+            "status": "SUCCESS",
+            "paymentMethod": {
+              "type": "CREDIT_CARD",
+              "last4": "4242"
+            },
+            "idempotencyKey": "idemp_ord_mte7rpq2_27322faf",
+            "gatewayRef": "gw_auth_3bb700d5b8b2",
+            "id": "pay_mte7rpqo_2fc810b8",
+            "createdAt": "2026-08-29T10:04:34.704Z",
+            "updatedAt": "2026-08-29T10:04:34.704Z"
+          },
+          "timestamp": "2026-08-29T10:04:34.713Z",
+          "traceId": "tr_gw_1787997874679_au3f6"
+        }
+      },
+      {
+        "stepName": "INVENTORY_COMMIT",
+        "status": "SUCCESS",
+        "timestamp": "2026-08-29T10:04:34.719Z",
+        "details": {}
+      }
+    ],
+    "createdAt": "2026-08-29T10:04:34.683Z",
+    "updatedAt": "2026-08-29T10:04:34.721Z"
+  },
+  {
+    "id": "saga_ord_mte7rprj_10997b9a",
+    "orderId": "ord_mte7rprj_10997b9a",
+    "status": "COMPENSATED",
+    "steps": [
+      {
+        "stepName": "INVENTORY_RESERVATION",
+        "status": "SUCCESS",
+        "timestamp": "2026-08-29T10:04:34.747Z",
+        "details": {
+          "success": true,
+          "data": {
+            "success": true,
+            "reservationId": "sto_mte7rpro_a4d339ff",
+            "orderId": "ord_mte7rprj_10997b9a",
+            "status": "RESERVED"
+          },
+          "timestamp": "2026-08-29T10:04:34.747Z",
+          "traceId": "tr_gw_1787997874735_0karb"
+        }
+      },
+      {
+        "stepName": "PAYMENT_CHARGE",
+        "status": "FAILED",
+        "timestamp": "2026-08-29T10:04:34.756Z",
+        "details": {
+          "success": false,
+          "error": {
+            "code": "UNPROCESSABLE_ENTITY",
+            "message": "Payment gateway declined the transaction",
+            "statusCode": 422,
+            "details": {
+              "transactionId": "pay_mte7rpry_cc738135"
+            },
+            "timestamp": "2026-08-29T10:04:34.756Z",
+            "traceId": "tr_gw_1787997874735_0karb"
+          }
+        }
+      },
+      {
+        "stepName": "COMPENSATION_INVENTORY_RELEASE",
+        "status": "SUCCESS",
+        "timestamp": "2026-08-29T10:04:34.767Z",
+        "details": {
+          "reason": "Payment failed"
+        }
+      }
+    ],
+    "createdAt": "2026-08-29T10:04:34.736Z",
+    "updatedAt": "2026-08-29T10:04:34.769Z"
   }
 ]

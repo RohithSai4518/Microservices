@@ -22,5 +22,17 @@
     "id": "pay_mte6z1po_1223d1d8",
     "createdAt": "2026-08-29T09:42:17.196Z",
     "updatedAt": "2026-08-29T09:42:17.196Z"
+  },
+  {
+    "transactionId": "pay_mte7rpqo_2fc810b8",
+    "orderId": "ord_mte7rpq2_27322faf",
+    "amount": 2499,
+    "currency": "USD",
+    "type": "CREDIT",
+    "description": "Charge for order ord_mte7rpq2_27322faf",
+    "balanceAfter": 2499,
+    "id": "pay_mte7rpqp_f453d4c9",
+    "createdAt": "2026-08-29T10:04:34.705Z",
+    "updatedAt": "2026-08-29T10:04:34.705Z"
   }
 ]

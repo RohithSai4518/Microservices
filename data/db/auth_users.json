@@ -5,10 +5,10 @@
     "passwordHash": "565d84cc9739669f9c843334e83e4ed9:024300abdfbc3d76eb2fd2df6ad3d94dd7e1429ab664dfd098b1f14b0e0782d9b2310cf7bdc6ca3d3cb9432854f23067002a2ddcd29a8ba90d653e8ba7f8c05f",
     "role": "admin",
     "status": "ACTIVE",
-    "lastLoginAt": "2026-08-29T09:42:17.136Z",
+    "lastLoginAt": "2026-08-29T10:04:34.657Z",
     "id": "aut_mte6wbig_9c7a4a4d",
     "createdAt": "2026-08-29T09:40:09.928Z",
-    "updatedAt": "2026-08-29T09:42:17.136Z"
+    "updatedAt": "2026-08-29T10:04:34.657Z"
   },
   {
     "email": "customer@microservices.local",
@@ -42,5 +42,16 @@
     "id": "aut_mte6z1n1_bb85b3a4",
     "createdAt": "2026-08-29T09:42:17.101Z",
     "updatedAt": "2026-08-29T09:42:17.101Z"
+  },
+  {
+    "email": "testuser_1787997874588@testdomain.com",
+    "name": "Integration Test User",
+    "passwordHash": "c61b4c3e1778fddf57a32552566781a0:be542d9b19ab4d4557d0b29b93442f701e08948fac18264a622a2a675328f003014f2b9c08297f17804b2290f8f428071aedb750ef2c9eeba24b74aa45730d20",
+    "role": "customer",
+    "status": "ACTIVE",
+    "lastLoginAt": null,
+    "id": "aut_mte7rpok_ca610934",
+    "createdAt": "2026-08-29T10:04:34.628Z",
+    "updatedAt": "2026-08-29T10:04:34.628Z"
   }
 ]

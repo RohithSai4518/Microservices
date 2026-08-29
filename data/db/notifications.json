@@ -46,5 +46,29 @@
     "id": "not_mte6z1q8_ca7d9d84",
     "createdAt": "2026-08-29T09:42:17.216Z",
     "updatedAt": "2026-08-29T09:42:17.216Z"
+  },
+  {
+    "userId": "aut_mte7rpok_ca610934",
+    "recipient": "testuser_1787997874588@testdomain.com",
+    "channel": "EMAIL",
+    "subject": "Welcome to MicroServices Platform, Integration Test User!",
+    "message": "Your registration was successful. You can now browse our catalog and place orders.",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T10:04:34.637Z",
+    "id": "not_mte7rpot_3f1b1026",
+    "createdAt": "2026-08-29T10:04:34.637Z",
+    "updatedAt": "2026-08-29T10:04:34.637Z"
+  },
+  {
+    "userId": "usr_integ_01",
+    "recipient": "usr_integ_01",
+    "channel": "EMAIL",
+    "subject": "Order #ord_mte7rpq2_27322faf Confirmed ($2499)",
+    "message": "Your payment was processed and stock allocated. Thank you for your order!",
+    "status": "DELIVERED",
+    "sentAt": "2026-08-29T10:04:34.726Z",
+    "id": "not_mte7rpra_6a684268",
+    "createdAt": "2026-08-29T10:04:34.726Z",
+    "updatedAt": "2026-08-29T10:04:34.726Z"
   }
 ]

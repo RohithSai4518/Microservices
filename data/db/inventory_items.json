@@ -1,13 +1,13 @@
 [
   {
     "sku": "SKU-TITAN-X8",
-    "availableStock": 33,
+    "availableStock": 32,
     "reservedStock": 0,
-    "totalStock": 33,
+    "totalStock": 32,
     "warehouse": "MAIN-WAREHOUSE-1",
     "id": "inv_mte6wbja_9e7e27cb",
     "createdAt": "2026-08-29T09:40:09.958Z",
-    "updatedAt": "2026-08-29T09:42:17.256Z"
+    "updatedAt": "2026-08-29T10:04:34.758Z"
   },
   {
     "sku": "SKU-MON-49UW",

@@ -334,5 +334,173 @@
     "id": "aud_mte6z1rw_ee7a7756",
     "createdAt": "2026-08-29T09:42:17.276Z",
     "updatedAt": "2026-08-29T09:42:17.276Z"
+  },
+  {
+    "eventId": "evt_1787997874633_f9462488",
+    "topic": "auth.user.registered",
+    "sender": "auth-service",
+    "payload": {
+      "userId": "aut_mte7rpok_ca610934",
+      "email": "testuser_1787997874588@testdomain.com",
+      "name": "Integration Test User",
+      "role": "customer",
+      "registeredAt": "2026-08-29T10:04:34.628Z"
+    },
+    "traceId": "tr_gw_1787997874618_y5vd8",
+    "receivedAt": "2026-08-29T10:04:34.637Z",
+    "id": "aud_mte7rpot_10feb12b",
+    "createdAt": "2026-08-29T10:04:34.637Z",
+    "updatedAt": "2026-08-29T10:04:34.637Z"
+  },
+  {
+    "eventId": "evt_1787997874660_86bb0b01",
+    "topic": "auth.user.login",
+    "sender": "auth-service",
+    "payload": {
+      "userId": "aut_mte6wbig_9c7a4a4d",
+      "email": "admin@microservices.local",
+      "timestamp": "2026-08-29T10:04:34.659Z"
+    },
+    "traceId": "tr_gw_1787997874647_j152w",
+    "receivedAt": "2026-08-29T10:04:34.663Z",
+    "id": "aud_mte7rppj_70e1c7bf",
+    "createdAt": "2026-08-29T10:04:34.663Z",
+    "updatedAt": "2026-08-29T10:04:34.663Z"
+  },
+  {
+    "eventId": "evt_1787997874694_59dac783",
+    "topic": "inventory.reserved",
+    "sender": "inventory-service",
+    "payload": {
+      "orderId": "ord_mte7rpq2_27322faf",
+      "reservationId": "sto_mte7rpqa_63c9fdfc",
+      "items": [
+        {
+          "productId": "pro_mte6wbj7_186239d5",
+          "sku": "SKU-TITAN-X8",
+          "name": "Titan Enterprise Server Node X8",
+          "price": 2499,
+          "quantity": 1,
+          "subtotal": 2499
+        }
+      ]
+    },
+    "traceId": "tr_gw_1787997874679_au3f6",
+    "receivedAt": "2026-08-29T10:04:34.696Z",
+    "id": "aud_mte7rpqg_49144589",
+    "createdAt": "2026-08-29T10:04:34.696Z",
+    "updatedAt": "2026-08-29T10:04:34.696Z"
+  },
+  {
+    "eventId": "evt_1787997874709_1fef17f4",
+    "topic": "payment.successful",
+    "sender": "payment-service",
+    "payload": {
+      "orderId": "ord_mte7rpq2_27322faf",
+      "transactionId": "pay_mte7rpqo_2fc810b8",
+      "userId": "usr_integ_01",
+      "amount": 2499,
+      "currency": "USD"
+    },
+    "traceId": "tr_gw_1787997874679_au3f6",
+    "receivedAt": "2026-08-29T10:04:34.710Z",
+    "id": "aud_mte7rpqu_6c59badd",
+    "createdAt": "2026-08-29T10:04:34.710Z",
+    "updatedAt": "2026-08-29T10:04:34.710Z"
+  },
+  {
+    "eventId": "evt_1787997874724_b325d734",
+    "topic": "order.saga.completed",
+    "sender": "order-service",
+    "payload": {
+      "orderId": "ord_mte7rpq2_27322faf",
+      "userId": "usr_integ_01",
+      "totalAmount": 2499,
+      "itemsCount": 1,
+      "items": [
+        {
+          "productId": "pro_mte6wbj7_186239d5",
+          "sku": "SKU-TITAN-X8",
+          "name": "Titan Enterprise Server Node X8",
+          "price": 2499,
+          "quantity": 1,
+          "subtotal": 2499
+        }
+      ]
+    },
+    "traceId": "tr_gw_1787997874679_au3f6",
+    "receivedAt": "2026-08-29T10:04:34.726Z",
+    "id": "aud_mte7rpra_9ba570fe",
+    "createdAt": "2026-08-29T10:04:34.726Z",
+    "updatedAt": "2026-08-29T10:04:34.726Z"
+  },
+  {
+    "eventId": "evt_1787997874742_3a7e0cdf",
+    "topic": "inventory.reserved",
+    "sender": "inventory-service",
+    "payload": {
+      "orderId": "ord_mte7rprj_10997b9a",
+      "reservationId": "sto_mte7rpro_a4d339ff",
+      "items": [
+        {
+          "productId": "pro_mte6wbj7_186239d5",
+          "sku": "SKU-TITAN-X8",
+          "name": "Titan Enterprise Server Node X8",
+          "price": 2499,
+          "quantity": 1,
+          "subtotal": 2499
+        }
+      ]
+    },
+    "traceId": "tr_gw_1787997874735_0karb",
+    "receivedAt": "2026-08-29T10:04:34.743Z",
+    "id": "aud_mte7rprr_d99fdd76",
+    "createdAt": "2026-08-29T10:04:34.743Z",
+    "updatedAt": "2026-08-29T10:04:34.743Z"
+  },
+  {
+    "eventId": "evt_1787997874753_f6ad75b3",
+    "topic": "payment.failed",
+    "sender": "payment-service",
+    "payload": {
+      "orderId": "ord_mte7rprj_10997b9a",
+      "transactionId": "pay_mte7rpry_cc738135",
+      "amount": 2499,
+      "reason": "Card declined / Insufficient funds simulation"
+    },
+    "traceId": "tr_gw_1787997874735_0karb",
+    "receivedAt": "2026-08-29T10:04:34.754Z",
+    "id": "aud_mte7rps2_c941b088",
+    "createdAt": "2026-08-29T10:04:34.754Z",
+    "updatedAt": "2026-08-29T10:04:34.754Z"
+  },
+  {
+    "eventId": "evt_1787997874764_ad6b8f44",
+    "topic": "inventory.released",
+    "sender": "inventory-service",
+    "payload": {
+      "orderId": "ord_mte7rprj_10997b9a",
+      "reason": "Payment charge declined"
+    },
+    "traceId": "tr_gw_1787997874735_0karb",
+    "receivedAt": "2026-08-29T10:04:34.765Z",
+    "id": "aud_mte7rpsd_624d2074",
+    "createdAt": "2026-08-29T10:04:34.765Z",
+    "updatedAt": "2026-08-29T10:04:34.765Z"
+  },
+  {
+    "eventId": "evt_1787997874771_9b94d002",
+    "topic": "order.saga.compensated",
+    "sender": "order-service",
+    "payload": {
+      "orderId": "ord_mte7rprj_10997b9a",
+      "sagaId": "saga_ord_mte7rprj_10997b9a",
+      "reason": "Payment failed, inventory released"
+    },
+    "traceId": "tr_gw_1787997874735_0karb",
+    "receivedAt": "2026-08-29T10:04:34.772Z",
+    "id": "aud_mte7rpsk_ac1b10f7",
+    "createdAt": "2026-08-29T10:04:34.773Z",
+    "updatedAt": "2026-08-29T10:04:34.773Z"
   }
 ]
