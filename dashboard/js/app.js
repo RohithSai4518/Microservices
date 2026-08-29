@@ -34,6 +34,7 @@ const App = {
     this.pollInterval = setInterval(() => {
       if (this.activeTab === 'tab-topology') this.refreshTopology();
       if (this.activeTab === 'tab-analytics') this.loadAnalytics();
+      if (this.activeTab === 'tab-catalog') this.loadCatalog();
       if (this.activeTab === 'tab-events') this.loadEvents();
     }, 4000);
   },
@@ -63,8 +64,11 @@ const App = {
         headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
         ...options
       });
-      const data = await res.json();
-      return { ok: res.ok, status: res.status, data };
+      const json = await res.json();
+      const payload = (json && typeof json === 'object' && json.data !== undefined && json.success !== undefined)
+        ? json.data
+        : json;
+      return { ok: res.ok, status: res.status, data: payload, raw: json };
     } catch (err) {
       return { ok: false, status: 0, error: err.message };
     }
@@ -76,7 +80,8 @@ const App = {
     let activeCount = 0;
 
     if (res.ok && res.data) {
-      document.getElementById('stat-uptime').innerText = `${Math.floor(res.data.gateway.uptime || 0)}s`;
+      const gw = res.data.gateway || {};
+      document.getElementById('stat-uptime').innerText = `${Math.floor(gw.uptime || 0)}s`;
       document.getElementById('gw-status-badge').className = 'badge badge-green';
       document.getElementById('gw-status-text').innerText = 'Gateway Online (Port 8000)';
     } else {
@@ -86,7 +91,7 @@ const App = {
 
     // Probe Registry
     const regRes = await this.fetchJson('http://localhost:9001/services').catch(() => ({ ok: false }));
-    const registeredMap = (regRes.ok && regRes.data && regRes.data.services) ? regRes.data.services : {};
+    const registeredMap = (regRes.ok && regRes.data && regRes.data.services) ? regRes.data.services : (regRes.ok && regRes.data ? regRes.data : {});
     const regNodesCount = Object.keys(registeredMap).length;
     document.getElementById('stat-registry-nodes').innerText = `${regNodesCount} Services`;
 
@@ -100,7 +105,6 @@ const App = {
     servicesGrid.innerHTML = '';
     for (const svc of this.servicesMeta) {
       let isUp = false;
-      let latency = 'Probe OK';
 
       // Check if instance is in registry or directly reachable
       if (svc.port === 8000 && res.ok) isUp = true;
@@ -207,18 +211,20 @@ const App = {
     const tableBody = document.getElementById('catalog-table-body');
     const select = document.getElementById('saga-product-select');
 
-    if (!res.ok || !res.data || !res.data.products) {
+    const prodPayload = res.data?.data || res.data || {};
+    const products = prodPayload.products || (Array.isArray(prodPayload) ? prodPayload : null);
+
+    if (!res.ok || !products || !Array.isArray(products) || products.length === 0) {
       tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--accent-red);">Failed to load products from Product Service</td></tr>`;
       return;
     }
 
-    const products = res.data.products;
     this.cachedProducts = products;
 
+    const invPayload = invRes.data?.data || invRes.data || {};
+    const invItems = invPayload.items || (Array.isArray(invPayload) ? invPayload : []);
     const invMap = {};
-    if (invRes.ok && invRes.data && invRes.data.items) {
-      invRes.data.items.forEach(i => invMap[i.sku] = i);
-    }
+    invItems.forEach(i => invMap[i.sku] = i);
 
     // Populate Catalog Table
     tableBody.innerHTML = products.map(p => {
@@ -255,7 +261,7 @@ const App = {
       alert(`Successfully restocked 25 units for SKU ${sku}`);
       this.loadCatalog();
     } else {
-      alert(`Restock failed: ${res.data?.error?.message || 'Error'}`);
+      alert(`Restock failed: ${res.data?.error?.message || res.raw?.error?.message || 'Error'}`);
     }
   },
 
@@ -300,14 +306,16 @@ const App = {
       body: JSON.stringify(payload)
     });
 
-    if (res.ok && res.data.success) {
+    const isSuccess = res.ok && (res.data?.success !== false && res.raw?.success !== false);
+
+    if (isSuccess) {
       this.setSagaStep('step-inv-reserve', 'success', 'Stock reserved in warehouse');
       this.setSagaStep('step-pay-charge', 'success', `Charge authorized ($${(price * quantity).toFixed(2)})`);
       this.setSagaStep('step-inv-commit', 'success', 'Inventory committed to order');
       this.setSagaStep('step-notif-dispatch', 'success', 'Order confirmed & notification dispatched');
 
       document.getElementById('saga-result-box').style.display = 'block';
-      document.getElementById('saga-result-json').innerText = JSON.stringify(res.data, null, 2);
+      document.getElementById('saga-result-json').innerText = JSON.stringify(res.raw || res.data, null, 2);
     } else {
       // Failed / Compensated flow
       this.setSagaStep('step-inv-reserve', 'success', 'Stock initially held');
@@ -316,7 +324,7 @@ const App = {
       this.setSagaStep('step-notif-dispatch', 'failed', 'Order marked failed & saga rolled back');
 
       document.getElementById('saga-result-box').style.display = 'block';
-      document.getElementById('saga-result-json').innerText = JSON.stringify(res.data, null, 2);
+      document.getElementById('saga-result-json').innerText = JSON.stringify(res.raw || res.data, null, 2);
     }
 
     btn.disabled = false;
@@ -328,20 +336,24 @@ const App = {
 
   setSagaStep(id, state, subText) {
     const el = document.getElementById(id);
+    if (!el) return;
     el.className = `saga-step ${state}`;
-    document.getElementById(`${id}-sub`).innerText = subText;
+    const sub = document.getElementById(`${id}-sub`);
+    if (sub) sub.innerText = subText;
   },
 
   async loadEvents() {
     const res = await this.fetchJson('/api/analytics/events/stream');
     const tableBody = document.getElementById('events-table-body');
+    const payload = res.data?.data || res.data || {};
+    const events = payload.events || (Array.isArray(payload) ? payload : []);
 
-    if (!res.ok || !res.data || !res.data.events || res.data.events.length === 0) {
+    if (!res.ok || !events || events.length === 0) {
       tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No events streamed yet</td></tr>`;
       return;
     }
 
-    tableBody.innerHTML = res.data.events.slice(0, 30).map(e => `
+    tableBody.innerHTML = events.slice(0, 30).map(e => `
       <tr>
         <td style="color:var(--text-secondary); font-size:0.75rem;">${new Date(e.receivedAt || e.createdAt).toLocaleTimeString()}</td>
         <td><code>${e.topic}</code></td>
@@ -380,7 +392,7 @@ const App = {
     const res = await this.fetchJson(path, options);
     const lat = Math.round(performance.now() - t0);
 
-    output.innerText = `// Status: ${res.status} (${lat}ms)\n` + JSON.stringify(res.data, null, 2);
+    output.innerText = `// Status: ${res.status} (${lat}ms)\n` + JSON.stringify(res.raw || res.data, null, 2);
   }
 };
 
